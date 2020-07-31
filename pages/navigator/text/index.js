@@ -4,14 +4,15 @@ import {Article} from "../../../models/article";
 import {CompanyRotationchart} from "../../../models/companyRotationchart";
 import {ArticleModule} from "../../../models/articleModule";
 import {ArticleType} from "../../../models/articleType";
-
+import {AppModel} from "../../../models/app";
+const app=getApp()
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    TabCur:0
+    TabCur:0,
   },
 
   /**
@@ -27,7 +28,7 @@ Page({
 
   onLoad: async function (options) {
     let obj={
-      "EnterpriseID": "3373",
+      "EnterpriseID": app.config.EnterpriseID,
     }
     const banner=await CompanyRotationchart.Search(obj)
     const notice = await Article.GetTopArticle(obj)
@@ -87,9 +88,42 @@ Page({
   onNoticeBar(e){
     let index = e.detail.index
     let notice = this.data.notice;
-    console.log("notice="+notice)
     let id = notice.Data[index].ID;
 
+    wx.navigateTo({
+      url: `/pages/subpackages/propaganda/article/articleDetail/index?id=${id}`,
+    })
+  },
+  async onGrid(e){
+    // 用户授权
+    await AppModel.getSetting()
+    let phone = wx.getStorageSync('phoneNumber')
+    if(!phone){
+      wx.showModal({
+        title: '提示',
+        content: '您还未登录是否现在登录',
+        success(res) {
+          if (res.confirm) {
+            console.log('用户点击确定')
+            wx.switchTab({
+              url: '/pages/navigator/mine/index',
+            })
+          } else if (res.cancel) {
+            console.log('用户点击取消')
+          }
+        }
+      })
+      return
+    }
+
+    let id = e.currentTarget.dataset.id;
+        wx.navigateTo({
+          url: `/pages/subpackages/propaganda/article/articleList/index?ArticleType=${id}`,
+        })
+  },
+  onCard(e){
+    let id =e.currentTarget.dataset.id;
+    console.log(id)
     wx.navigateTo({
       url: `/pages/subpackages/propaganda/article/articleDetail/index?id=${id}`,
     })

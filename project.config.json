@@ -251,6 +251,13 @@
 					"id": -1,
 					"name": "酒店提交预定",
 					"pathName": "pages/subpackages/mall/product/orderTypeOne/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/navigator/index/index",
+					"pathName": "pages/navigator/index/index",
 					"scene": null
 				}
 			]

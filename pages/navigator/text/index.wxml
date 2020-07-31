@@ -9,13 +9,14 @@
         </block>
     </swiper>
 
-    <l-notice-bar bind:tap="onNoticeBar" show="{{notice.Online}}" type="swip" swip-arr="{{noticeArr}}" front-icon-name="notification">
+    <l-notice-bar bind:lintap="onNoticeBar" show="{{notice.Online}}" type="swip" swip-arr="{{noticeArr}}" front-icon-name="notification">
     </l-notice-bar>
 
     <l-grid l-class="grid" show-border="true">
-        <l-grid-item  l-grid-item-class="grid-item" data-name="文章"
+        <l-grid-item   l-grid-item-class="grid-item"
                       data-id="{{item.ArticleTypeID}}"
-                      wx:for="{{grid.Data}}" wx:key="index" key="{{item.ArticleTypeID}}" slot="{{item.ArticleTypeID}}" bind:linitemtap="onNaviCard">
+                      wx:for="{{grid.Data}}" wx:key="index" key="{{item.ArticleTypeID}}"
+                       slot="{{item.ArticleTypeID}}" bind:linitemtap="onGrid">
             <view class='{{item.icon}} {{item.color}} text-shadow '>
                 <image class="img" src="{{grid.ShowResourcesUrl}}{{item.CoverImage}}"></image>
             </view>
@@ -34,6 +35,7 @@
 
     <block wx:for='{{article.accumulator}}' wx:key="index">
         <l-card  type="primary"
+                 bind:tap="onCard"
                  l-class="card"
                  full="{{true}}"
                  l-img-class="right-card"

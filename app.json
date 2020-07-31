@@ -1,6 +1,7 @@
 {
   "pages": [
     "pages/navigator/text/index",
+    "pages/navigator/index/index",
     "pages/navigator/indexTypeOne/index",
     "pages/navigator/indexTest/index",
     "pages/navigator/mall/index",
