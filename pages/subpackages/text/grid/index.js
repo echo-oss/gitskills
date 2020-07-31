@@ -58,7 +58,7 @@ Page({
     let id = e.currentTarget.dataset.id;
     console.log(id)
     wx.navigateTo({
-      url: `/pages/subpackages/propaganda/article/articleDetail/index?id=${id}`,
+      url: `/pages/subpackages/text/notice/index?id=${id}`,
     })
   },
 
