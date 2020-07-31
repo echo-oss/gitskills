@@ -1,0 +1,29 @@
+<wxs src="../../../../utils/util.wxs" module="util"></wxs>
+<l-card type="primary"
+        bind:tap="onCardItem"
+        l-class="card"
+        l-img-class="right-card"
+        l-title-class="title-card"
+        full="{{true}}"
+        position="right"
+        wx:for="{{article.accumulator}}" wx:key="index"
+        title="发表人:{{item.StaffName}}"
+        image="{{item.baseUrl}}{{item.CoverImage}}">
+    <view class="content">
+        {{item.Title}}
+    </view>
+    <view class="bottom-container">
+        <view class="in-container">
+            <l-icon name="eye" color="#666" size="28"/>
+            <view class="number">{{item.ReadAmount}}</view>
+        </view>
+        <view  class="in-container">
+            <view class="number">/</view>
+        </view>
+        <view class="in-container">
+            <view class="number">{{util.utcToBj(item.CreationTime,"M/D h:m")}}</view>
+        </view>
+    </view>
+</l-card>
+<l-toast/>
+<l-loadmore show type="{{loadingType}}" end-text="已到底部啦!"></l-loadmore>

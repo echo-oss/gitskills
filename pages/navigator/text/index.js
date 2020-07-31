@@ -118,7 +118,7 @@ Page({
 
     let id = e.currentTarget.dataset.id;
         wx.navigateTo({
-          url: `/pages/subpackages/propaganda/article/articleList/index?ArticleType=${id}`,
+          url: `/pages/subpackages/text/grid/index?ArticleType=${id}`,
         })
   },
   onCard(e){

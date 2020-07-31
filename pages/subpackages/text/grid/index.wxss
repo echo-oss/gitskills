@@ -1,0 +1,39 @@
+/* pages/subpackages/text/grid/index.wxss */
+.right-card{
+    height: 180rpx !important;
+    width: 220rpx !important;
+    border-radius: 12rpx !important;
+}
+.bottom-container{
+    display: flex;
+    flex-direction:row;
+    margin-top: 20rpx;
+}
+.title-card{
+    color: #89c3ff !important;
+    font-size: 12px !important;
+}
+.card{
+    border-bottom: 1px dashed #DCEBE6 !important;
+}
+.in-container{
+    display: flex;
+    flex-direction: row;
+    margin-right: 10rpx;
+}
+.content{
+    margin-top: 10rpx;
+    color: #666;
+    font-size: 30rpx;
+    font-weight:bold ;
+    overflow: hidden;
+    text-overflow:ellipsis ;
+    display: -webkit-box;
+    -webkit-box-orient:vertical;
+    -webkit-line-clamp:2;
+}
+.number{
+    color: #666;
+    font-size: 24rpx;
+    margin-left: 10rpx;
+}

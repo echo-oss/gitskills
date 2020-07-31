@@ -55,7 +55,6 @@
                     <view class="number">/</view>
                 </view>
                 <view class="in-container">
-                    <l-icon name="default" color="#666" size="28" />
                     <view class="number">{{util.utcToBj(item.CreationTime,"M/D h:m")}}</view>
                 </view>
             </view>
