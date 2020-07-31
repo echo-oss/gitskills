@@ -91,7 +91,7 @@ Page({
     let id = notice.Data[index].ID;
 
     wx.navigateTo({
-      url: `/pages/subpackages/propaganda/article/articleDetail/index?id=${id}`,
+      url: `/pages/subpackages/text/notice/index?id=${id}`,
     })
   },
   async onGrid(e){

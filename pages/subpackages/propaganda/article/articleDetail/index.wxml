@@ -17,4 +17,6 @@
 </view>
 
 
-<l-article-bar class="tapbar" bind:gotohome="onGotoHome" bind:gotocart="onGotoCart" bind:addtocart="onAddToCart" bind:buy="onBuy"></l-article-bar>
+<l-article-bar class="tapbar" bind:gotohome="onGotoHome"
+               bind:gotocart="onGotoCart" bind:addtocart="onAddToCart"
+               bind:buy="onBuy"></l-article-bar>

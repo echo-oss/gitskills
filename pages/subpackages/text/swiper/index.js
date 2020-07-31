@@ -39,7 +39,7 @@ Page({
         tap: (e) => {
           console.log('tap', e);
           let data = e.currentTarget.dataset.data
-          if (data.tag == 'img') {
+          if (data.tag === 'img') {
             var currentImage = data.attr.src
             var imageList = []
             imageList.push(currentImage)

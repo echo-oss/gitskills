@@ -1,0 +1,7 @@
+.tapbar{
+  position:fixed;
+  bottom:0;
+}
+scroll-view{
+  padding: 0px 0px  130rpx;
+}

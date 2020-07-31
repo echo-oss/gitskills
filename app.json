@@ -9,7 +9,8 @@
     "pages/navigator/mine/index",
     "pages/navigator/statistics/index",
     "pages/navigator/statisticsTest/index",
-    "pages/subpackages/text/swiper/index"
+    "pages/subpackages/text/swiper/index",
+    "pages/subpackages/text/notice/index"
   ],
   "window": {
     "backgroundTextStyle": "dark",
