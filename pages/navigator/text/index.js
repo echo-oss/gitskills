@@ -6,6 +6,7 @@ import {ArticleModule} from "../../../models/articleModule";
 import {ArticleType} from "../../../models/articleType";
 import {AppModel} from "../../../models/app";
 import {Company} from "../../../models/company";
+import {File} from "../../../models/file";
 const app=getApp()
 Page({
 
@@ -33,27 +34,83 @@ Page({
       withCredentials:true,
       menus:['shareAppMessage','shareTimeline']
     })
+    const scene = decodeURIComponent(options.scene)
+    console.log('???',scene)
+    if ( scene != 'undefined'){
+      const data = await File.SearchModelDetails({ ChannleCode:scene})
+      let ChannleCode;
+      let ChannleName;
+      app.openIDCallback = OpenID=>{
+        console.log('openid回调',OpenID)
+        switch (data.type) {
+          case 0:
+            ChannleCode = 'ABCDEFGH'
+            ChannleName = '员工二维码'
+            let JsonCode = JSON.parse(data.JsonCode)
+            let SharOpenID = JsonCode.SharOpenID
+            if (SharOpenID) {
+              app.globalData.SharOpenID = SharOpenID
+              wx.setStorageSync('SharOpenID', SharOpenID)
+            }
+            break;
+          case 1:
+            ChannleCode = data.GUID
+            ChannleName = data.JsonCode
+            break;
+          default:
+        }
+        let obj = {
+          "EnterpriseID": app.config.EnterpriseID,
+          "OpenID": OpenID,
+          "ChannleCode": ChannleCode,
+          "ChannleName": ChannleName,
+        }
+        const save =  File.SaveChannleByPCQRCode(obj)
+      }
+
+    }else if (options.url) {
+      let url = decodeURIComponent(options.url);
+
+      let SharOpenID = decodeURIComponent(options.SharOpenID);
+      if (SharOpenID){
+        app.globalData.SharOpenID = SharOpenID
+        wx.setStorageSync('SharOpenID', SharOpenID)
+      }
+      wx.navigateTo({
+        url: url,
+      })
+    }
+    app.shopInfoReadyCallback = res => {
+      console.log('刷新店铺信息回调', res)
+      this.setData({
+        shopInfo: res
+      })
+      wx.setNavigationBarTitle({
+        title: res.CompanyName
+      })
+    }
   },
   async onLocation(){
     wx.showToast({
       title:'加载中',
       mask:true,
-      icon:null
+      icon:"none"
     })
     const company=await Company.SearchModelDetails(app.config.EnterpriseID)
     wx.setStorageSync('shopInfo', company)
+    let shopInfo = this.data.shopInfo
     setTimeout(function () {
       wx.hideToast()
-    },1000)
+    },100)
     AppModel.getSetting().then(res=>{
       return AppModel.getUserLocation()
     }).then(
         res=>{
-         wx.openLocation({
-            latitude:company.Latitude,
-            longitude:company.Longitude,
-            scale:16,
-            name:company.CompanyName,
+          wx.openLocation({
+            latitude: company.Latitude,
+            longitude: company.Longitude,
+            scale: '16',
+            name: company.CompanyName,
             address: company.Address,
             success: function (res) { },
             fail: function (res) { },
