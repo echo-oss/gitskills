@@ -82,7 +82,7 @@ Page({
     let id = e.currentTarget.dataset.id;
 
     wx.navigateTo({
-      url: `/pages/subpackages/mall/activity/activityDetail/index?id=${id}&pagePath=CompanyRotationchart`,
+      url: `/pages/subpackages/text/swiper/index?id=${id}&pagePath=CompanyRotationchart`,
     })
   },
   onNoticeBar(e){

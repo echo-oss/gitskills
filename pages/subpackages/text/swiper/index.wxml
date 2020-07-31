@@ -1,0 +1,8 @@
+<view class="cu-bar bg-white">
+    <view class="action ">
+        标题：{{ModelData.Title}}
+    </view>
+</view>
+<scroll-view scroll-y>
+    <towxml nodes="{{article}}" />
+</scroll-view>
