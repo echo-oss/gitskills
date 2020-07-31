@@ -62,7 +62,10 @@
     height: auto; /* 自适应 如果图片为null 本模块消失  */
     display: flex; /* 消除图片自带的间距 */
 }
-
+.share{
+    display: flex;
+    flex-direction: row;
+}
 .swiper {
     width: 100%;
     height: 420rpx;

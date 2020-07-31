@@ -1,5 +1,23 @@
 <!--pages/navigator/text/index.wxml-->
 <wxs src="../../../utils/util.wxs" module="util"></wxs>
+<view class="cu-bar bg-white" >
+    <view class="action">
+        <text class="cuIcon-title text-green"></text>
+        <text class="spu-text">{{shopInfo.CompanyName}}</text>
+    </view>
+    <view class="action" bind:tap="onLocation">
+        <text class="cuIcon-location " style="color:#3683d6" ></text>
+        <text>位置信息</text>
+    </view>
+    <view class="action">
+        <l-button style="display:inline-block" special="{{true}}" open-type="share">
+            <view class="share">
+                <text class="cuIcon-share " style="color:#3683d6;margin-top:8rpx"></text>
+                <text >分享</text>
+            </view>
+        </l-button>
+    </view>
+</view>
 <view class="container">
     <swiper class="swiper" indicator-dots indicator-color indicator-active-color="#F0F8FF" autoplay interval="5000" circular>
         <block wx:for="{{banner.Data}}" wx:key="index">

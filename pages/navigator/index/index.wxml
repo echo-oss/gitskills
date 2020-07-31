@@ -6,8 +6,6 @@
     <text class="cuIcon-title text-green"></text>
     <text class="spu-text">{{shopInfo.CompanyName}}</text>
   </view>
-
-
   <view class="action" catchtap="onOpenLocation">
     <text class="cuIcon-location "></text>
     <text>到这里</text>
@@ -15,9 +13,7 @@
   <view class="action" >
     <l-button icon="share" size="medium" open-type="share" icon-color="#ffffff" icon-size="32">立即分享</l-button>
   </view>
-
 </view>
-
 <view class="container">
   <!-- 轮播图   -->
   <swiper class="swiper" indicator-dots indicator-active-color="#157658" autoplay circular interval="5000">
@@ -34,7 +30,6 @@
     <l-notice-bar l-class="bar" tyle="margin-bottom:20rpx" show="{{notice.Online}}" type="swip" swip-arr="{{noticeArr}}" front-icon-name="notification" bind:lintap="onNoticeBar">
     </l-notice-bar>
   </view>
-
   <!-- 分类六宫格 -->
   <view class='cu-list grid col-3 no-border inner-container '>
     <view class='cu-item ' style="height: 150rpx;" wx:for="{{basicsGrid}}" wx:key="index" data-name="{{item.title}}" bindtap='onNaviCard'>
@@ -50,7 +45,6 @@
       <text class="margin">{{item.TypeName}}</text>
     </view>
   </view>
-
   <!-- 分页 -->
   <scroll-view scroll-x class="bg-white nav text-center margin-top text-lg">
     <block wx:for="{{nav.Data}}" wx:key="index">
@@ -58,10 +52,7 @@
         {{item.TypeName}}
       </view>
     </block>
-
-
   </scroll-view>
-
   <!-- <view class="cu-card article {{isCard?'no-card':''}}" >
   <view class="cu-item shadow" bindtap="onCardItem" wx:for='{{article.items}}' wx:key="index" data-id="{{item.ID}}">
     <view class="title">
@@ -80,7 +71,6 @@
     </view>
   </view>
 </view> -->
-
   <block wx:for='{{article.accumulator}}' wx:key="index">
     <l-card type="primary" l-class="card"
             l-img-class="right-card"
@@ -106,10 +96,6 @@
       </view>
     </l-card>
   </block>
-
-
-
-
 </view>
 
 <l-toast />

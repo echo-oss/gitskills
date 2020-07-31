@@ -2,6 +2,7 @@
   "usingComponents": {
     "l-notice-bar": "/miniprogram_npm/lin-ui/notice-bar/index",
     "l-tabs": "/miniprogram_npm/lin-ui/tabs/index",
-    "l-tabpanel": "/miniprogram_npm/lin-ui/tabpanel/index"
+    "l-tabpanel": "/miniprogram_npm/lin-ui/tabpanel/index",
+    "l-button": "/miniprogram_npm/lin-ui/button/index"
   }
 }

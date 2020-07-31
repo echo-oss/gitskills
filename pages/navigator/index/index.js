@@ -87,10 +87,7 @@ Page({
         title: res.CompanyName
       })
     }
-
   },
-
-  
   onShareAppMessage: function () {
     let id = this.data.id;
     let OpenID = wx.getStorageSync('OpenID')
@@ -146,7 +143,7 @@ Page({
       shopInfo: wx.getStorageSync('shopInfo')
     })
     wx.stopPullDownRefresh();
-    this.tabSelectGetData()
+    this.tabSelectGetData();
   },
 /** */
   async onOpenLocation(){
@@ -155,7 +152,6 @@ Page({
       mask: true,
       icon: "none"
     })
-
     const company =await Company.SearchModelDetails(app.config.EnterpriseID)
     wx.setStorageSync('shopInfo', company)
     let shopInfo = this.data.shopInfo
@@ -178,9 +174,6 @@ Page({
         complete: function (res) { },
       })
     })
-
-
-
   },
   /**banner点击 */
   onBanner(e){

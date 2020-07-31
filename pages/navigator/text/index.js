@@ -5,6 +5,7 @@ import {CompanyRotationchart} from "../../../models/companyRotationchart";
 import {ArticleModule} from "../../../models/articleModule";
 import {ArticleType} from "../../../models/articleType";
 import {AppModel} from "../../../models/app";
+import {Company} from "../../../models/company";
 const app=getApp()
 Page({
 
@@ -13,6 +14,7 @@ Page({
    */
   data: {
     TabCur:0,
+    loading:true
   },
 
   /**
@@ -27,8 +29,41 @@ Page({
   // },
 
   onLoad: async function (options) {
-
+    wx.showShareMenu({
+      withCredentials:true,
+      menus:['shareAppMessage','shareTimeline']
+    })
   },
+  async onLocation(){
+    wx.showToast({
+      title:'加载中',
+      mask:true,
+      icon:null
+    })
+    const company=await Company.SearchModelDetails(app.config.EnterpriseID)
+    wx.setStorageSync('shopInfo', company)
+    setTimeout(function () {
+      wx.hideToast()
+    },1000)
+    AppModel.getSetting().then(res=>{
+      return AppModel.getUserLocation()
+    }).then(
+        res=>{
+         wx.openLocation({
+            latitude:company.Latitude,
+            longitude:company.Longitude,
+            scale:16,
+            name:company.CompanyName,
+            address: company.Address,
+            success: function (res) { },
+            fail: function (res) { },
+            complete: function (res) { },
+          })
+        }
+    )
+    // 用户授权
+  },
+
   async initAllData(){
     let obj={
       "EnterpriseID": app.config.EnterpriseID,
@@ -52,7 +87,9 @@ Page({
       notice,
       noticeArr,
       grid,
-      nav
+      nav,
+      loading:false,
+      shopInfo:wx.getStorageSync('shopInfo')
     })
     this.tabSelectGetData()
   },
@@ -199,6 +236,11 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-
-  }
+    let OpenID = wx.getStorageSync('OpenID')
+    let url = encodeURIComponent('/pages/navigator/text/index');
+    return {
+      title: "详情",
+      path: `/pages/navigator/text/index?url=${url}&SharOpenID=${OpenID}&SharType=index`
+    }
+  },
 })
