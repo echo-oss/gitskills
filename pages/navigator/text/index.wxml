@@ -1,0 +1,84 @@
+<!--pages/navigator/text/index.wxml-->
+<wxs src="../../../utils/util.wxs" module="util"></wxs>
+<view class="container">
+    <swiper class="swiper" indicator-dots indicator-color indicator-active-color="#F0F8FF" autoplay interval="5000" circular>
+        <block wx:for="{{banner.Data}}" wx:key="index">
+            <swiper-item bind:tap="onBanner" data-id="{{item.ID}}">
+                <image class="swiper" src="{{banner.ShowResourcesUrl}}{{item.CoverImage}}"></image>
+            </swiper-item>
+        </block>
+    </swiper>
+
+    <l-notice-bar bind:tap="onNoticeBar" show="{{notice.Online}}" type="swip" swip-arr="{{noticeArr}}" front-icon-name="notification">
+    </l-notice-bar>
+
+    <l-grid l-class="grid" show-border="true">
+        <l-grid-item  l-grid-item-class="grid-item" data-name="文章"
+                      data-id="{{item.ArticleTypeID}}"
+                      wx:for="{{grid.Data}}" wx:key="index" key="{{item.ArticleTypeID}}" slot="{{item.ArticleTypeID}}" bind:linitemtap="onNaviCard">
+            <view class='{{item.icon}} {{item.color}} text-shadow '>
+                <image class="img" src="{{grid.ShowResourcesUrl}}{{item.CoverImage}}"></image>
+            </view>
+            <text class="margin">{{item.TypeName}}</text>
+        </l-grid-item>
+    </l-grid>
+
+    <scroll-view scroll-x class="bg-white nav text-center margin-top text-lg">
+        <block wx:for="{{nav.Data}}" wx:key="index">
+            <view class="cu-item {{index==TabCur?'navColor cur':'text-black'}}"
+                  bindtap="tabSelect" data-id="{{item.ID}}" data-index="{{index}}">
+                {{item.TypeName}}
+            </view>
+        </block>
+    </scroll-view>
+
+    <block wx:for='{{article.accumulator}}' wx:key="index">
+        <l-card  type="primary"
+                 l-class="card"
+                 full="{{true}}"
+                 l-img-class="right-card"
+                 l-title-class="title-card"
+                 position="right"
+                 image="{{item.baseUrl}}{{item.CoverImage}}"
+                 title="发表人：{{item.StaffName}}">
+            <view class="content">
+                {{item.Title}}
+            </view>
+            <view class="buttom-container">
+                <view class="in-container">
+                    <l-icon name="eye" color="#666" size="28" />
+                    <view class="number">{{item.ReadAmount}}</view>
+                </view>
+                <view class="in-container">
+                    <view class="number">/</view>
+                </view>
+                <view class="in-container">
+                    <l-icon name="default" color="#666" size="28" />
+                    <view class="number">{{util.utcToBj(item.CreationTime,"M/D h:m")}}</view>
+                </view>
+            </view>
+        </l-card>
+        <!--		<l-card type="primary" l-class="card" l-img-class="right-card"-->
+        <!--				l-title-class="title-card" position="right" full="{{true}}"-->
+        <!--				image="{{item.baseUrl}}{{item.CoverImage}}" title="发表人：{{item.StaffName}}"-->
+        <!--				bindtap="onCardItem" data-id="{{item.ID}}">-->
+        <!--			<view class="content">-->
+        <!--				{{item.Title}}-->
+        <!--			</view>-->
+        <!--			<view class="avter-share-container">-->
+        <!--				<view class="like-container">-->
+        <!--					<l-icon name="eye" color="#666" size="28" />-->
+        <!--					<view class="number">{{item.ReadAmount}}</view>-->
+        <!--				</view>-->
+        <!--				<view class="like-container">-->
+        <!--					<view class="number">/</view>-->
+        <!--				</view>-->
+        <!--				<view class="like-container">-->
+        <!--					<l-icon name="default" color="#666" size="28" />-->
+        <!--					&lt;!&ndash; <view class="number">{{item.CreationTime}}</view> &ndash;&gt;-->
+        <!--					<view class="number">{{util.utcToBj(item.CreationTime,"M/D h:m")}}</view>-->
+        <!--				</view>-->
+        <!--			</view>-->
+        <!--		</l-card>-->
+    </block>
+</view>

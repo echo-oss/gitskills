@@ -1,6 +1,6 @@
 {
   "pages": [
-    "pages/navigator/index/index",
+    "pages/navigator/text/index",
     "pages/navigator/indexTypeOne/index",
     "pages/navigator/indexTest/index",
     "pages/navigator/mall/index",
@@ -8,6 +8,7 @@
     "pages/navigator/mine/index",
     "pages/navigator/statistics/index",
     "pages/navigator/statisticsTest/index"
+  
   ],
   "window": {
     "backgroundTextStyle": "dark",
@@ -22,8 +23,8 @@
     "borderStyle": "black",
     "list": [
       {
-        "pagePath": "pages/navigator/index/index",
-        "text": "首页",
+        "pagePath": "pages/navigator/text/index",
+        "text": "测试首页",
         "iconPath": "/imgs/tabbar/base.png",
         "selectedIconPath": "/imgs/tabbar/base-select.png"
       },
@@ -84,7 +85,9 @@
     "l-checkbox": "/miniprogram_npm/lin-ui/checkbox/index",
     "l-countdown": "/miniprogram_npm/lin-ui/countdown/index",
     "l-slide-view": "/miniprogram_npm/lin-ui/slide-view/index",
-    "l-arc-popup":"/miniprogram_npm/lin-ui/arc-popup/index",
+    "l-arc-popup": "/miniprogram_npm/lin-ui/arc-popup/index",
+    "l-collapse": "/miniprogram_npm/lin-ui/collapse/index",
+    "l-collapse-item": "/miniprogram_npm/lin-ui/collapse-item/index",
     "s-spu-preview": "components/spu-preview/index",
     "s-product-preview": "components/product-preview/index",
     "content-card": "/components/content-card/index",
@@ -96,11 +99,11 @@
     "s-sale-explain": "/components/sale-explain/index",
     "s-spu-image": "/components/spu-image/index",
     "s-spu-typeOne": "/components/spu-typeOne/index",
-    "l-dialog":"/miniprogram_npm/lin-ui/dialog/index"
+    "l-dialog": "/miniprogram_npm/lin-ui/dialog/index"
   },
   "subPackages": [
     {
-      "root": "pages/subpackages/mall"  ,
+      "root": "pages/subpackages/mall",
       "pages": [
         "company/staffQRCode/index",
         "company/staffList/index",
@@ -144,7 +147,6 @@
       ]
     }
   ],
-
   "permission": {
     "scope.userLocation": {
       "desc": "授权您的位置为您提供地图导航及附近信息服务"

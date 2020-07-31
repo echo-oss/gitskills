@@ -23,19 +23,38 @@
 			</l-grid>
 		</view>
 
-		<view class="list-container">
-			<block wx:for="{{roomData.Custom}}">
-				<view class="list-item-container">
-					<text class="left">{{item.key}}</text>
-					<text class="right">{{item.Value}} </text>
-				</view>
-			</block>
+		<view class="ticket-container">
+			<view class="ticket-container-top"></view>
+			<view class="ticket-container-bottom">
+				<l-collapse>
+					<l-collapse-item l-body-class="l-body-class" l-title-class="l-title-class" customTitle="{{true}}">
+						<!--自定义标题-->
+						<view class="title" slot="title">
+							<view class="ticket-detail-container">更多房型设施
+								<l-icon name="down" size="16" color="#999"/>
+							</view>
+						</view>
+						<view class="list-container">
+							<block wx:for="{{roomData.Custom}}">
+								<view class="list-item-container">
+									<text class="left">{{item.key}}</text>
+									<text class="right">{{item.Value}} </text>
+								</view>
+							</block>
+
+						</view>
+					</l-collapse-item>
+				</l-collapse>
+			</view>
 
 		</view>
 
+
+
+
 		<content-card class="container " name="取消政策与服务" cardPadding="{{false}}" bind:tapping="onMore" wx:if='{{row}}'>
 			<view class="intro">
-				<s-table hasBorder='yes' tdWidth='200' s-class-header='my-class' s-class-row='my-class-row' headers='{{headers}}' list='{{row}}'></s-table>
+				<s-table hasBorder='yes' tdWidth='175' s-class-header='my-class' s-class-row='my-class-row' headers='{{headers}}' list='{{row}}'></s-table>
 			</view>
 		</content-card>
 
@@ -61,7 +80,7 @@
 			<l-price l-class="discount-price"
 					 color="#999999"
 					 size="26"
-					 wx:if="{{data.DiscountPrice}}"
+					 wx:if="{{roomData.Room.DiscountPrice}}"
 					 deleted value="{{p.slashedPrice(roomData.Room.Price,roomData.Room.DiscountPrice).price}}"></l-price>
 		</view>
 

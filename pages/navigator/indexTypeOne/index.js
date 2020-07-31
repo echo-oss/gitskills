@@ -49,13 +49,21 @@ Page({
       shopInfo
     })
     //设缓存缓存起来的日期
+    let checkInDate=Moment(new Date()).format('YYYY-MM-DD')
+    let checkOutDate= Moment(new Date()).add(1, 'day').format('YYYY-MM-DD')
+
     wx.setStorage({
       key: 'ROOM_SOURCE_DATE',
       data: {
-        checkInDate: Moment(new Date()).format('YYYY-MM-DD'),
-        checkOutDate: Moment(new Date()).add(1, 'day').format('YYYY-MM-DD')
+        checkInDate,
+        checkOutDate
       }
     });
+    this.setData({
+      StartValidityTime: checkInDate,
+      EndValidityTime: checkOutDate,
+      selectDay:Moment(checkOutDate).differ(checkInDate)
+    })
   },
   onShow(){
     let getDate = wx.getStorageSync("ROOM_SOURCE_DATE");
@@ -85,7 +93,7 @@ Page({
     let StartValidityTime= app.util.tsFormatTime(this.data.StartValidityTime,'YMD')
     let EndValidityTime= app.util.tsFormatTime(this.data.EndValidityTime,'YMD')
     let obj = {
-      "EnterpriseID": "3373",
+      "EnterpriseID": app.config.EnterpriseID,
       "StartValidityTime":StartValidityTime,
       "EndValidityTime":EndValidityTime,
       "Total": this.data.selectDay,

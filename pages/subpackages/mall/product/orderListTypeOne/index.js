@@ -77,6 +77,7 @@ Page({
     if(!item.IsRefund){
       wx.showToast({
         title: '暂不支持退款',
+        icon:'none'
       })
       return
     }

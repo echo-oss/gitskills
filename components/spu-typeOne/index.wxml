@@ -21,7 +21,7 @@
             </l-tag>
 
         </view>
-        <text class="subtitle">今天{{string.slice(spu.FreeCancelTime,0,2)}}:{{string.slice(spu.FreeCancelTime,2)}} 前可以免费取消</text>
+        <text class="subtitle">{{startTime}}  {{string.slice(spu.FreeCancelTime,0,2)}}:{{string.slice(spu.FreeCancelTime,2)}} 前可以免费取消</text>
         <view class="price-row">
             <l-price wx:if="{{p.mainPrice(spu.Price, spu.DiscountPrice).display}}"
                      value="{{p.mainPrice(spu.Price, spu.DiscountPrice).price}}"
