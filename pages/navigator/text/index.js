@@ -27,6 +27,9 @@ Page({
   // },
 
   onLoad: async function (options) {
+
+  },
+  async initAllData(){
     let obj={
       "EnterpriseID": app.config.EnterpriseID,
     }
@@ -139,6 +142,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
+    this.initAllData()
   },
 
   /**
@@ -159,15 +163,38 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
+      this.initAllData()
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
-  onReachBottom: function () {
+  onReachBottom: async function () {
+
+    const data = await this.data.articleModel.getMoreData();
+    console.log(data)
+    if (!data) {
+      this.setData({
+        loadingType: 'end'
+      })
+      return
+    } else {
+      this.setData({
+        loadingType: 'loading'
+      })
+    }
+    this.setData({
+      article: data
+    })
+
+    if (!data.moreData) {
+      this.setData({
+        loadingType: 'end'
+      })
+
+    }
 
   },
-
   /**
    * 用户点击右上角分享
    */
