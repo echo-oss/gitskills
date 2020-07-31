@@ -38,6 +38,7 @@
                  bind:tap="onCard"
                  l-class="card"
                  full="{{true}}"
+                 data-id="{{item.ID}}"
                  l-img-class="right-card"
                  l-title-class="title-card"
                  position="right"

@@ -118,8 +118,9 @@ Page({
 
   },
   onGotoHome(){
+
     wx.switchTab({
-      url: '/pages/navigator/index/index',
+      url: "/pages/navigator/text/index",
     })
   },
   onGotoCart(){

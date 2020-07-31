@@ -8,6 +8,7 @@
         position="right"
         wx:for="{{article.accumulator}}" wx:key="index"
         title="发表人:{{item.StaffName}}"
+        data-id="{{item.ID}}"
         image="{{item.baseUrl}}{{item.CoverImage}}">
     <view class="content">
         {{item.Title}}
