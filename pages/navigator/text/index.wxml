@@ -1,6 +1,6 @@
 <!--pages/navigator/text/index.wxml-->
 <wxs src="../../../utils/util.wxs" module="util"></wxs>
-<view class="cu-bar bg-white "  >
+<view class="cu-bar bg-white "  style="position: fixed !important;top:0px; z-index:98; width:100%;">
     <view class="action" bindtap="onTitle">
         <text class="cuIcon-title text-green"></text>
         <text class="spu-text">{{shopInfo.CompanyName}}</text>
@@ -18,7 +18,7 @@
         </l-button>
     </view>
 </view>
-<view class="container">
+<view class="container" style="margin-top:50px">
     <swiper class="swiper" indicator-dots indicator-color indicator-active-color="#F0F8FF" autoplay interval="5000" circular>
         <block wx:for="{{banner.Data}}" wx:key="index">
             <swiper-item bind:tap="onBanner" data-id="{{item.ID}}">
