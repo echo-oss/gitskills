@@ -11,7 +11,7 @@
     border: 1px dashed #DCEBE6 !important;
 }
 .grid-item{
-    margin-top:50rpx;
+    /* margin-top:50rpx; */
     background-color: #FFFFFF !important;
 }
 .card{
@@ -57,20 +57,29 @@
     white-space: nowrap;
 }
 
-.top-theme {
+/* .top-theme {
     width: 100%;
-    height: auto; /* 自适应 如果图片为null 本模块消失  */
-    display: flex; /* 消除图片自带的间距 */
-}
+    height: auto;
+     /* 自适应 如果图片为null 本模块消失  */
+    /* display: flex;  */
+    /* 消除图片自带的间距 */
+/* } */ 
 .share{
     display: flex;
     flex-direction: row;
 }
 .swiper {
     width: 100%;
-    height: 420rpx;
+    height: 380rpx;
 }
-
+.mask-class{
+    background-color: white !important;
+    position: fixed !important;
+    top:100rpx !important;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
 /*设置图片的大小*/
 .img{

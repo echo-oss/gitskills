@@ -15,7 +15,8 @@ Page({
    */
   data: {
     TabCur:0,
-    loading:true
+    loading:true,
+    maskShow:false
   },
 
   /**
@@ -28,14 +29,23 @@ Page({
   //     url: `/pages/subpackages/mall/activity/activityDetail/index?id=${id}&pagePath=CompanyRotationchart`,
   //   })
   // },
+  onMask(){
+    this.setData({
+      maskShow:false
+    })
+  },
+  onTitle(){
+    this.setData({
+      maskShow:true
+    })
+  },
 
   onLoad: async function (options) {
     wx.showShareMenu({
-      withCredentials:true,
+      withShareTicket:true,
       menus:['shareAppMessage','shareTimeline']
     })
     const scene = decodeURIComponent(options.scene)
-    console.log('???',scene)
     if ( scene != 'undefined'){
       const data = await File.SearchModelDetails({ ChannleCode:scene})
       let ChannleCode;
