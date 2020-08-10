@@ -11,7 +11,8 @@
     "pages/navigator/statisticsTest/index",
     "pages/subpackages/text/swiper/index",
     "pages/subpackages/text/notice/index",
-    "pages/subpackages/text/grid/index"
+    "pages/subpackages/text/grid/index",
+    "pages/navigator/test/index"
   ],
   "window": {
     "backgroundTextStyle": "dark",

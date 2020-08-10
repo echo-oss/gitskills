@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:企业宣传" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="9bd3bdf7-4e14-484e-ab50-e4f3254f3cc2" name="默认的" comment="">
+      <change beforePath="$PROJECT_DIR$/pages/navigator/text/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/navigator/text/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/subpackages/text/notice/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/subpackages/text/notice/index.js" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1evsKVqa6QUirAtMshv9C6FMPwX" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/pages/navigator" />
+    </key>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="9bd3bdf7-4e14-484e-ab50-e4f3254f3cc2" name="默认的" comment="" />
+      <created>1595213336859</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1595213336859</updated>
+      <workItem from="1595213339007" duration="14771000" />
+      <workItem from="1595234843465" duration="4203000" />
+      <workItem from="1595322486678" duration="3120000" />
+      <workItem from="1595384115385" duration="10416000" />
+      <workItem from="1595465664782" duration="25853000" />
+      <workItem from="1595552976827" duration="20978000" />
+      <workItem from="1595812758095" duration="1879000" />
+      <workItem from="1595815547501" duration="17996000" />
+      <workItem from="1595897227095" duration="12965000" />
+      <workItem from="1595918147299" duration="3139000" />
+      <workItem from="1596078536639" duration="18160000" />
+      <workItem from="1596157003970" duration="1040000" />
+      <workItem from="1596162294792" duration="24856000" />
+      <workItem from="1596414489080" duration="8804000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="341" y="153" key="SettingsEditor" timestamp="1595826224207">
+      <screen x="0" y="23" width="1680" height="982" />
+    </state>
+    <state x="341" y="153" key="SettingsEditor/1680.23.1920.1057/0.23.1680.982@0.23.1680.982" timestamp="1595826224207" />
+    <state x="621" y="416" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1595554195250">
+      <screen x="0" y="23" width="1680" height="982" />
+    </state>
+    <state x="621" y="416" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/1680.23.1920.1057/0.23.1680.982@0.23.1680.982" timestamp="1595554195250" />
+    <state x="475" y="228" key="run.anything.popup" timestamp="1595563129765">
+      <screen x="0" y="23" width="1680" height="982" />
+    </state>
+    <state x="475" y="228" key="run.anything.popup/1680.23.1920.1057/0.23.1680.982@0.23.1680.982" timestamp="1595563129765" />
+    <state x="-947" y="245" width="670" height="676" key="search.everywhere.popup" timestamp="1596185375738">
+      <screen x="-1280" y="23" width="1280" height="1001" />
+    </state>
+    <state x="-947" y="245" width="670" height="676" key="search.everywhere.popup/0.23.1280.735/-1280.23.1280.1001@-1280.23.1280.1001" timestamp="1596185375738" />
+  </component>
+</project>
